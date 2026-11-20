@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "waveform-hud"
+version = "0.1.0"
+description = "Brutalist terminal waveform & HUD telemetry monitor (#0D0D0D / #FF4500)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Nirbhaya Shiwakoti", email = "nirbhayashiwakoti19@gmail.com" }]
+dependencies = [
+    "rich>=13.7.0",
+]
+
+[project.optional-dependencies]
+audio = [
+    "numpy>=1.26.0",
+    "sounddevice>=0.4.6",
+]
+
+[project.scripts]
+waveform-hud = "waveform_hud.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
